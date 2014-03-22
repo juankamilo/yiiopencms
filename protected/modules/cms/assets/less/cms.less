@@ -1,0 +1,70 @@
+/**
+ * Cms module style
+ * @author Christoffer Niska <christoffer.niska@nordsoftware.com>
+ * @copyright 2011, Nord Software Ltd
+ * @license New BSD License
+ */
+
+.cms-page,
+.cms-block {
+	margin-bottom: 20px;
+	position: relative;
+
+	.edit-link {
+		display: none;
+		padding: 3px 5px;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	&:hover .edit-link {
+		display: block;
+	}
+}
+
+.cms {
+	.cms-admin-buttons {
+		margin-bottom: 20px;
+	}
+
+	.cms-form-tabs {
+		margin-top: 20px;
+	}
+
+	.markItUp {
+		margin: 0;
+		width: 900px !important;
+
+		.markItUpEditor {
+			width: 888px !important;
+		}
+	}
+
+	.tags {
+		background-color: #EEE;
+		margin-bottom: 0;
+		margin-top: 10px;
+		padding: 20px;
+		width: 858px;
+
+		& > ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	.form-actions {
+		margin-bottom: 0;
+	}
+
+	.draggable {
+		cursor: pointer;
+		width: 15px;
+	}
+
+	.add-button {
+		margin-bottom: 10px;
+	}
+}

@@ -1,0 +1,37 @@
+.cms-page, .cms-block {
+  margin-bottom:20px;
+  position:relative;
+}
+.cms-page .edit-link, .cms-block .edit-link {
+  display:none;
+  padding:3px 5px;
+  position:absolute;
+  right:0;
+  top:0;
+}
+.cms-page:hover .edit-link, .cms-block:hover .edit-link { display:block; }
+.cms .cms-admin-buttons { margin-bottom:20px; }
+.cms .cms-form-tabs { margin-top:20px; }
+.cms .markItUp {
+  margin:0;
+  width:900px !important;
+}
+.cms .markItUp .markItUpEditor { width:888px !important; }
+.cms .tags {
+  background-color:#eeeeee;
+  margin-bottom:0;
+  margin-top:10px;
+  padding:20px;
+  width:858px;
+}
+.cms .tags > ul {
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+.cms .form-actions { margin-bottom:0; }
+.cms .draggable {
+  cursor:pointer;
+  width:15px;
+}
+.cms .add-button { margin-bottom:10px; }
