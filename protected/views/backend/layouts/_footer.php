@@ -1,3 +1,3 @@
 <div id="footer">
-        <?php echo Yii::powered(); ?>
+        Copyright &copy; <?php echo date('Y'); ?> by RentingCarz. All Rights Reserved.<br/>
 </div><!-- footer -->

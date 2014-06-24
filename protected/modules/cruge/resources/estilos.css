@@ -1,0 +1,304 @@
+.code {
+	font-style: italic;
+	font-family: monospace;
+	color: #666;
+}
+	
+.is-superadmin-note{
+	padding: 3px;
+	color: black;
+	background-color: rgb(255,255,100);
+	text-align: center;
+	border-radius: 5px;
+	position: absolute;
+	left: 45%;
+	top: 0px;
+	box-shadow: 3px 3px 5px #eee;
+}
+
+.crugepanel {
+	background-color: white;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px dotted #aaa;
+	box-shadow: 3px 3px 5px #eee;
+	display: block;
+	margin-top: 10px;
+}
+
+.auth-item-error-msg{
+	background-color: rgb(255,200,200);
+	color: red;
+	font-weight: bold;
+	padding: 5px;
+	border: 2px solid white;
+	text-align: center;
+	width: 50%;
+}
+
+img.iconhelp{
+	margin: 3px;
+	background-color: white;
+	border: 2px solid white;
+	box-shadow: 3px 3px 5px #eee;
+	border-radius: 5px;
+	width: 24px;
+}
+
+
+.auth-item-create-button {
+	border: 1px dotted #aaa;
+	box-shadow: 3px 3px 5px #eee;
+	border-radius: 5px;
+	padding: 5px;
+	background-color: rgb(255,255,240);
+	text-align: center;
+	width: 120px;
+	margin: 10px;
+	margin-left: 0px;
+}
+
+div.form .form-group {
+	border: 1px dotted #aaa;
+	border-radius: 5px;
+	overflow: auto;
+	padding: 10px;
+	margin-bottom: 10px;
+	box-shadow: 3px 3px 5px #eee;
+}
+div.form .form-group .col {
+	float: left;
+	margin-right: 10px;
+}
+div.form  h6 {
+	margin-bottom: 10px;
+	background-color: #efefef;
+	padding: 5px;
+	padding-left: 10px;
+	border-radius: 3px;
+	
+}
+div.form .textfield-readonly input{
+	border: none;
+	background-color: #eee;
+	color: #333;
+}
+
+
+div.form .item {
+	overflow: auto;
+}
+div.form .item input{
+	float: left;
+}
+div.form  .item .hint {
+	float: left;
+	margin-left: 10px;
+}
+div.form  .hint {
+}
+
+div.form .field-group{
+	border: 1px dotted #eee;
+	border-radius: 5px;
+	overflow: auto;
+	clear: both;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+div.form .form-group-vert {
+	border: 1px dotted #aaa;
+	border-radius: 5px;
+	overflow: auto;
+	padding: 10px;
+	margin-bottom: 10px;
+	box-shadow: 3px 3px 5px #eee;
+}
+div.form .form-group-vert .col {
+	float: none;
+	margin-right: 10px;
+}
+
+
+
+
+#list-auth-items{
+	border: 1px solid red;
+	padding: 10px;
+	border: 1px solid #efefef;
+	border-radius: 5px;
+	box-shadow: 3px 3px 5px #eee;
+}
+#list-auth-items .row{
+	background-color: #efefef;
+	padding: 5px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	display: block;
+	width: 70%;
+	overflow: auto;
+}
+#list-auth-items .col{
+	text-align: left;
+	margin-bottom: 3px;
+	min-width: 100px;
+}
+
+#list-auth-items hr {
+	margin:0px;
+}
+
+#list-auth-items .authname{
+	font-weight: bold;
+	background-color: #ddd;
+	border-radius: 5px;
+	padding: 3px;
+}
+
+#list-auth-items .operacion{
+	float: left;
+}
+#list-auth-items .operacion-eliminar{
+	float: right;
+	text-align: right;
+	width: auto;
+	min-width: 0;
+}
+
+#list-auth-items .descr{
+	font-style: italic;
+	color: #666;
+	display: block;
+	clear: both;
+	margin-top: 5px;
+}
+
+#list-auth-items  .referencias{
+}
+#list-auth-items  ul.detallar-referencias {
+	list-style: none;
+	overflow: auto;
+	display: none;
+}
+#list-auth-items  ul.detallar-referencias li{
+	float: left;
+	margin-right: 10px;
+}
+
+
+
+/*
+	auth-item muestra los CAuthItems, 
+*/
+
+ul.auth-item {
+	overflow: auto;
+	list-style: none;
+	text-align: left;
+}
+
+ul.auth-item input {
+	margin-right: 10px;
+	float: left;
+}
+
+ul.auth-item  li {
+	float: left;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	border: 1px dotted #aaa;
+	padding: 5px;
+	min-width: 150px;
+	
+	border-radius: 5px;
+	box-shadow: 3px 3px 5px #eee;
+}
+
+ul.auth-item  li .loader{
+	float: right;
+}
+
+ul.auth-item  li.checked{
+	background-color: rgb(200,255,240);
+}
+ul.auth-item  li.selected{
+	background-color: rgb(200,240,255);
+}
+
+ul.auth-item  li.loop{
+	background-color: #ddd;
+}
+
+
+#auth-item-tree ul ul li{
+	
+}
+
+#auth-item-tree ul ul ul li{ 
+	
+}
+
+#auth-item-tree ul ul .itemtext {
+
+}
+
+#auth-item-tree ul ul ul .itemchildtext{ 
+	
+}
+
+#auth-item-tree ul ul .checked {
+	color: blue;
+}
+
+#auth-item-tree ul ul ul .checked{ 
+	color: blue;
+}
+
+
+#auth-item-tree .loop{
+	color: red;
+	font-style: italic;	
+}
+
+
+
+
+
+div.user-assignments-role-list {
+}
+
+div.user-assignments-detail {
+	overflow: auto;
+}
+
+div.user-assignments-detail .lista{
+	border: 1px solid blue;
+	float: left;
+	margin-right: 10px;
+	width: 40%;
+	padding: 10px;
+	border: 1px solid #eee;
+	border-radius: 5px;
+}
+
+div.user-assignments-detail .boton {
+	background-image: url("hand.png");
+	background-repeat: no-repeat;
+	height: 32px;
+	padding: 5px;
+	padding-left: 34px;
+	font-weight: bold;
+	text-transform: capitalize;
+	text-decoration: underline;
+	color: rgb(0,100,255);
+}
+div.user-assignments-detail .boton:hover{
+	background-color: rgb(200,255,200);
+}
+div.user-assignments-detail #lista1 .boton {
+	background-image: url("hand-off.png");
+}
+div.user-assignments-detail #lista2 .boton {
+	background-image: url("hand.png");
+}

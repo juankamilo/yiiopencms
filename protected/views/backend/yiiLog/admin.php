@@ -32,9 +32,9 @@ $('.search-form form').submit(function(){
         <h3>Errores Log</h3>
     </header>
     <div class="module_content">
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'yii-log-grid',
+<?php $this->widget('bootstrap.widgets.TbGridView',array(
+        'type'=>'bordered condensed',
+	'id'=>'airport-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
@@ -49,9 +49,9 @@ $('.search-form form').submit(function(){
                     'name'=>'logtime',
                     'value'=>'date("Y-m-d H:i:s",$data->logtime)',
                 ),
-		'message',
+                'message',
 		array(
-			'class'=>'CButtonColumn',
+			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),
 	),
 )); ?>

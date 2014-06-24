@@ -92,6 +92,9 @@ class CmsPage extends CmsNode
 				'condition'=>'locale=:locale',
 				'params'=>array(':locale'=>Yii::app()->language),
 			),
+                        'contents'=>array(
+				self::HAS_MANY, 'CmsPageContent', 'pageId',
+			),
 			'default'=>array(
 				self::HAS_ONE, 'CmsPageContent', 'pageId',
 				'condition'=>'locale=:locale',
@@ -268,8 +271,10 @@ class CmsPage extends CmsNode
 	 */
 	public function getUrl($params = array())
 	{
-		return Yii::app()->createUrl('cms/page/view',
-				CMap::mergeArray($params, array('id'=>$this->id, 'name'=>$this->urlAlias)));
+            if($this->getParentName() == '')
+            	return Yii::app()->createUrl('cms/page/view',CMap::mergeArray($params, array('id'=>$this->id, 'name'=>$this->urlAlias)));
+            else
+            	return Yii::app()->createUrl('cms/page/view',CMap::mergeArray($params, array('id'=>$this->id, 'name'=>$this->urlAlias,'parent'=>$this->getParentName())));
 	}
 
 	/**
@@ -280,7 +285,7 @@ class CmsPage extends CmsNode
 	public function getAbsoluteUrl($params = array())
 	{
 		return Yii::app()->createAbsoluteUrl('cms/page/view',
-				CMap::mergeArray($params, array('id'=>$this->id, 'name'=>$this->urlAlias)));
+				CMap::mergeArray($params, array('id'=>$this->id, 'name'=>$this->urlAlias, 'parent'=>$this->getParentName())));
 	}
 
 	/**
@@ -399,6 +404,16 @@ class CmsPage extends CmsNode
 
 		return $children;
 	}
+        
+        /**
+	 * @return parent urlAlias.
+	 */
+	public function getParentName()
+	{
+		if(isset($this->parent->urlAlias))
+                    return $this->parent->urlAlias;
+		
+	}
 
 	/**
 	 * Renders the page tree.
@@ -417,6 +432,7 @@ class CmsPage extends CmsNode
 		echo '</ul>';
 		echo '</div>';
 	}
+	
 
 	/**
 	 * Renders a single branch in the page tree.

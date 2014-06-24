@@ -115,12 +115,17 @@ class PageController extends NodeController
 		{
 			$this->pageTitle = $model->pageTitle;
 			$this->breadcrumbs = $model->breadcrumbs;
-
 			/** @var CClientScript $cs */
 			$cs = Yii::app()->getClientScript();
-			$cs->registerMetaTag($model->content->metaTitle, 'title');
+			//$cs->registerMetaTag($model->content->metaTitle, 'title');
 			$cs->registerMetaTag($model->content->metaDescription, 'description');
 			$cs->registerMetaTag($model->content->metaKeywords, 'keywords');
+                        foreach ($model->contents as $v => $k){
+                            $cs->registerLinkTag('alternate',  null, 
+                                    Yii::app()->createAbsoluteUrl('cms/page/view', array('id'=>$k->pageId, 'name'=>$k->url, 'lang'=>$k->locale))
+                                    , null,array('hreflang'=>$k->locale));
+                        }
+                        $cs->registerLinkTag('canonical', null,  Yii::app()->getBaseUrl(true).$model->getUrl(array('lang'=>Yii::app()->language)));
 		}
 
 		$this->layout = $this->module->pageLayout;
@@ -193,9 +198,37 @@ class PageController extends NodeController
 		if ($model === null)
 			throw new CHttpException(404, Yii::t('CmsModule.core', 'The requested page does not exist.'));
 
-		return $model;
+                return $model;
 	}
-        
+        /*
+        *  Se agrega opcion de traduccion segun sistema antiguo para el manejo, ya que el de nord no funciona
+        * 
+        */   
+        public function __construct($id,$module=null){
+            parent::__construct($id,$module);
+            // If there is a post-request, redirect the application to the provided url of the selected language 
+            if(isset($_POST['lang'])) {
+                $lang = $_POST['lang'];
+                $MultilangReturnUrl = $_POST[$lang];
+                $this->redirect($MultilangReturnUrl);
+            }
+            // Set the application language if provided by GET, session or cookie
+            if(isset($_GET['lang'])) {
+                Yii::app()->language = $_GET['lang'];
+                Yii::app()->user->setState('lang', $_GET['lang']); 
+                Yii::app()->user->setState('__locale', $_GET['lang']); 
+                $cookie = new CHttpCookie('lang', $_GET['lang']);
+                $cookie->expire = time() + (60*60*24*365); // (1 year)
+                Yii::app()->request->cookies['lang'] = $cookie; 
+            }
+            else if (Yii::app()->user->hasState('lang'))
+                Yii::app()->language = Yii::app()->user->getState('lang');
+            else if(isset(Yii::app()->request->cookies['lang']))
+                Yii::app()->language = Yii::app()->request->cookies['lang']->value;
+        }
+        /*
+         * Controla el dropdown de los idiomas
+         */
         public function createMultilanguageReturnUrl($lang='en'){
             if (count($_GET)>0){
                 $arr = $_GET;
@@ -205,4 +238,5 @@ class PageController extends NodeController
                 $arr = array('lang'=>$lang);
             return $this->createUrl('', $arr);
         }
+        
 }

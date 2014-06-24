@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo Yii::app()->language; ?>" lang="<?php echo Yii::app()->language; ?>">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
         <?php Yii::app()->bootstrap->register(); ?>
         <?php Yii::app()->clientScript->registerCssFile(Yii::app()->theme->baseUrl.'/css/main.css?v=110220120632'); ?>
-        
+
 </head>
 <body>
     <?php $this->renderPartial('//layouts/_header') ?>

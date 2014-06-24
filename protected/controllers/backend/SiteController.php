@@ -38,10 +38,8 @@ class SiteController extends BackendController
      */
     public function actionIndex()
     {
-        //$this->render('index');
-        $model = new Reservas;
-        $this->render('//usuarios/admin',array('model'=>$model,));
-         
+        $this->render('index');
+
     }
 
     /**
@@ -55,15 +53,15 @@ class SiteController extends BackendController
                     echo $error['message'];
 	    	else
                     $this->render('error', $error);
-                        
+
                 $ip =Yii::app()->request->userHostAddress;
                 //$url = Yii::app()->request->getUrl();
                 //$urlA = Yii::app()->request->getUrlReferrer();
                 Yii::log(" IP: $ip","solicitud",'IP');
-                
+
 	    }
 	}
-    
+
     /**
     * Displays the login page
     */

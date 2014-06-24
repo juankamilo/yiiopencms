@@ -13,7 +13,7 @@ class CmsModule extends CWebModule
 	/**
 	 * @var string[] page types.
 	 */
-	public $pageTypes = array();
+	public $pageTypes = array(0=>'Page', 1=>'Post');
 	/**
 	 * @var array flash message categories.
 	 */
@@ -49,13 +49,13 @@ class CmsModule extends CWebModule
 		$this->defaultController = 'admin';
             /*
              *  Se agrega opcion de traduccion segun sistema antiguo para el manejo, ya que el de nord no funciona
-             * 
-             */    
+             *
+             */
             if (Yii::app()->user->hasState('lang'))
                 Yii::app()->language = Yii::app()->user->getState('lang');
             else if(isset(Yii::app()->request->cookies['lang']))
                 Yii::app()->language = Yii::app()->request->cookies['lang']->value;
-            
+
 	}
 
 	/**
@@ -84,10 +84,10 @@ class CmsModule extends CWebModule
 	 * Returns the module version number.
 	 * @return string the version
 	 */
-	public function getVersion() 
+	public function getVersion()
 	{
 		return '2.0.0';
 	}
-        
-        
+
+
 }

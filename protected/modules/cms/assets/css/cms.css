@@ -6,8 +6,8 @@
   display:none;
   padding:3px 5px;
   position:absolute;
-  right:0;
-  top:0;
+  right:30px;
+  top:30px;
 }
 .cms-page:hover .edit-link, .cms-block:hover .edit-link { display:block; }
 .cms .cms-admin-buttons { margin-bottom:20px; }

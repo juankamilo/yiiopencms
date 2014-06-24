@@ -1,5 +1,9 @@
-/* 
+/*
     Created on : 21-Mar-2014
     Author     : juankamilo
 */
 .hero-unit {margin-top: 50px;}
+#page{margin-top: 50px;}
+.cms-page{margin-top:30px}
+#footer{background-color: #f5f5f5;border-top: 1px solid #e5e5e5;padding-top:10px;}
+.footer{margin:15px;}

@@ -12,6 +12,9 @@ $this->pageTitle=Yii::app()->name;
 
 <?php $this->endWidget(); ?>
 
+<h3>Cms Content</h3>
+<p>Cms Content</p>
+
 <p>You may change the content of this page by modifying the following two files:</p>
 
 <ul>

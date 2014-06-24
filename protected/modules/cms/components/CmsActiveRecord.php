@@ -75,7 +75,7 @@ class CmsActiveRecord extends CActiveRecord
 	 * @param boolean $soft indicates whether to perform a "soft" delete
 	 * @return boolean whether the record can be deleted
 	 */
-	public function beforeDelete($soft)
+	public function CmsbeforeDelete($soft)
 	{
 		if (parent::beforeDelete() && $soft && $this->hasAttribute('deleted'))
 		{
@@ -99,7 +99,7 @@ class CmsActiveRecord extends CActiveRecord
 		{
 			Yii::trace(get_class($this) . '.delete()', 'CmsActiveRecord');
 
-			if ($this->beforeDelete($soft))
+			if ($this->CmsbeforeDelete($soft))
 			{
 				$result = $this->deleteByPk($this->getPrimaryKey()) > 0;
 				$this->afterDelete();

@@ -1,0 +1,82 @@
+Cruge Change Log
+================
+
+
+VERSION 1.0
+-----------
+
+- Enh	8d58569 PR#3	Ricardo Obregon	Ampliar ancho de 45 a 64 en
+tablas que alojan el password del usuario para adimitir aquellas generadas
+por hash md5.
+
+- Enh	8b1c5e	Christian Salazar	sistema de menu. auto deteccion
+de actions. vista de tareas treeview.
+	1) eliminada la verificacion RBAC en controlador base, solo actions,
+		quedando sin efecto los permisos RBAC asociados a controladores como
+		controller_site o similares. afectado: CrugeAccessControlFilter,
+		la razon de la eliminacion es que no tiene sentido dar o conceder 
+		derechos sobre todo un controller, dado que no es algo comun, solo 
+		causa mas molestias que usos directos.
+
+	2) Auto-Detección de Controllers y Actions. Ahora Cruge detecta actions
+	y no espera a que se usen para que sean agregados cuando el flag
+	rbacSetupEnabled esta activo o no. 
+	(sugerencia de Ramon Menor y Esteban Perez)
+
+	3) CrugeAuthManager ahora provee un API para crear menues basados en
+	tareas anidadas, aparte de las tareas tradicionales usando un mecanismo que
+	he llamado la "sintaxis avanzada de descripción de tarea".
+
+	4) Ahora la aplicacion cliente puede invocar a: 
+		Yii::app()->user->rbac->getMenu() 
+	para conocer cual será el menu del usuario activo según la programacion 
+	de tareas anidadas usando el mecanismo de creacion de menues.
+
+	5) La "lista de tareas" ahora presenta opciones para crear tareas de tipo 
+	menu, permitiendo indicar que una tarea es el menu de nivel superior y las
+	anidadas seran los subitems del menu, cada subitem es una tarea que
+	agrupa las operaciones necesarias para que un action sea usado como 
+	punto de arranque.
+
+	6) La edicion de un Rol o Tarea (child auth items) ahora presenta
+	los items en forma de Arbol, permitiendo ver las operaciones organizadas 
+	por Controller o Categoria. Ademas presenta las Tareas organizadas por:
+	Tareas Regulares, tareas de tipo menu (aquellas creadas usando sintaxis 
+	extendida y que representan menu items) y tareas huerfanas (aquellas 
+	que pretendieron ser menu items y que por alguna razon estan mal 
+	configuradas).
+
+	7) El metodo de asignacion de un auth item (una operacion o una tarea) ha 
+	cambiado desde el punto de vista visual, aunque internamente es lo mismo, 
+	antes se hacia click sobre un recuadro de puntas redondeadas y cuando este 
+	se asignaba a la tarea o rol se coloreaba en verde claro.  Ahora es un item
+	de un TreeView el cual se colorea en azul cuando es asignado usando un 
+	icono de "pin.png" que aparece al lado derecho del texto.
+
+
+- Enh						Christian Salazar	ampliación del API de 
+CrugeUserManager
+
+- Enh						Christian Salazar	incorporacion de CrugeConnector
+para agregar remote login.
+
+- Enh						Christian Salazar	agregando funciones 
+CrugeUserManager + fix comments
+
+- Task #07		eacd6345	Ricardo Obregon		Sacar la encriptacion Md5 
+hacia un metodo externo.
+
+(antes del task 07 no habian contribuciones ni anotaciones de CHANGELOG)
+
+
+NORMAS DEL CHANGELOG:
+---------------------
+
+1. Se debe crear un TASK, ENH o BUG en el gestor de issues con el asunto a ser resuelto.
+2. Tras haberse aprobado el cambio deberá tener su soporte en README.
+3. Igualmente, crear la entrada en CHANGELOG como sigue:
+
+	Columna 1. 	usar uno de: TASK/ENH,BUG seguido del numero de secuencia del issue.
+	Columna 2.	numero de commit.
+	Columna 3.	Nombre apellido (o correo) del autor.
+	Columna 4.	Descripcion clara y corta de aquello que se resolvió.

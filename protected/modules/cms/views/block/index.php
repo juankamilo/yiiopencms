@@ -8,6 +8,7 @@ $this->breadcrumbs=array(
 <div class="cms-block-index">
 	<div class="inner">
 
+		<h1><?php echo Yii::t('CmsModule.core','Blocks'); ?></h1>
 		<div class="cms-admin-buttons">
 			<?php $this->widget('bootstrap.widgets.TbButton',array(
 				'icon'=>'plus white',
@@ -17,7 +18,6 @@ $this->breadcrumbs=array(
 			)); ?>
 		</div>
 
-		<h1><?php echo Yii::t('CmsModule.core','Blocks'); ?></h1>
 
 		<?php $this->widget('bootstrap.widgets.TbGridView',array(
 			'type'=>array('striped','condensed'),

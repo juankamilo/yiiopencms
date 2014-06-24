@@ -8,7 +8,7 @@ return array(
         'application.models.backend.*',
         'application.components.backend.*',
     ),
-    
+
     // application components
     'components' => array(
         // uncomment the following to enable URLs in path-format

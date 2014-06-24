@@ -26,10 +26,10 @@ class Cms extends CApplicationComponent
 	 * @var string allowed files types.
 	 */
 	public $allowedFileTypes = 'txt, doc, docx, xls, xlsx, ppt, pptx, pdf, jpg, gif, png';
-    /**
-     * @var integer maximum allowed file size for attachments (in bytes).
-     */
-    public $allowedFileSize = 10240000;
+        /**
+         * @var integer maximum allowed file size for attachments (in bytes).
+         */
+        public $allowedFileSize = 10240000;
 	/**
 	 * @var string path for saving attached files.
 	 */
@@ -92,16 +92,26 @@ class Cms extends CApplicationComponent
 	 * Renders headers.
 	 * @param string $name the page name
 	 */
-	public function pageHeader($name)
+	public function pageHeader($name = 'index')
 	{
 		$page = CmsPage::model()->findByAttributes(array('name'=>$name));
                 /** @var CClientScript $cs */
+                if(isset($page->content->metaTitle)){
                 $cs = Yii::app()->getClientScript();
-                $cs->registerMetaTag($page->content->metaTitle, 'title');
+                //$cs->registerMetaTag($page->content->metaTitle, 'title');
                 $cs->registerMetaTag($page->content->metaDescription, 'description');
                 $cs->registerMetaTag($page->content->metaKeywords, 'keywords');
+                foreach ($page->contents as $v => $k){
+                    $cs->registerLinkTag('alternate',  null, 
+                            Yii::app()->createAbsoluteUrl('//site/'.$name, array('lang'=>$k->locale))
+                            , null,array('hreflang'=>$k->locale));
+                }
+                
+                
+                $cs->registerLinkTag('canonical', null, Yii::app()->createAbsoluteUrl('//site/index', array('lang'=>Yii::app()->language))); 
 		// Ensure that we only render published blocks.
-		
+                return $page->content->metaTitle;
+                }
 	}
 
 	/**
@@ -299,4 +309,25 @@ class Cms extends CApplicationComponent
                 return $this->_assetsUrl = $assetsUrl;
             }
         }
+        /**
+	 * Method that handles the on missing translation event. If no messagesource is found
+	 * then add it to the DB for its future edition from the user's control panel -that is up to you! :).
+	 * @param CMissingTranslationEvent $event
+	 * @return string the message to translate
+	 */
+	public static function missingTranslation($event)
+	{
+
+		$attributes = array('category' => $event->category, 'message' => $event->message);
+		if (($model = CmsSourceMessage::model()->find('message=:message AND category=:category', $attributes)) === null)
+		{
+			$model = new CmsSourceMessage();
+			$model->attributes = $attributes;
+                        
+			if ($model->save())
+				return $event;
+		}
+		
+		
+	}
 }
