@@ -1,3 +1,4 @@
+<?php ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo Yii::app()->language; ?>" lang="<?php echo Yii::app()->language; ?>">
 <head>
@@ -12,7 +13,6 @@
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
         <?php Yii::app()->bootstrap->register(); ?>
         <?php Yii::app()->clientScript->registerCssFile(Yii::app()->theme->baseUrl.'/css/main.css?v=110220120632'); ?>
-
 </head>
 <body>
     <?php $this->renderPartial('//layouts/_header') ?>

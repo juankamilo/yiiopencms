@@ -5,7 +5,7 @@
 	<meta name="language" content="en" />
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	<?php Yii::app()->bootstrap->register(); ?>
-        <?php Yii::app()->clientScript->registerCssFile(Yii::app()->theme->baseUrl.'/css/backend.css?v=110220120632'); ?>
+  <?php Yii::app()->clientScript->registerCssFile(Yii::app()->theme->baseUrl.'/css/backend.css?v=110220120632'); ?>
 </head>
 <body>
 <?php $this->renderPartial('//layouts/_header') ?>
@@ -14,7 +14,7 @@
         <div class="main">
         <?php echo $content; ?>
         </div>
-        
+
     </div>
     </div>
     <div class="clear"></div>

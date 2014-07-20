@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'name' => 'YiiCMS - Backend',
+    'name' => 'YiiOpenCMS - Backend',
     'theme' => 'backend',
     // autoloading model and component classes
     'import' => array(
