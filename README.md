@@ -5,8 +5,8 @@ FEATURES
 -------------------
 * Backend and Frontend
 * Bootstrap 2.3
-* CMS Content Translator
-* System Message Translator
+* CMS Multilanguage Support I18n
+* System & App Multilanguage Support I18n
 * Cruge RBAC **Reference:** [http://www.yiiframework.com/extension/cruge](http://www.yiiframework.com/extension/cruge)
 * Based on NordCMS 2.0 **Reference:** [https://bitbucket.org/NordLabs/nordcms](https://bitbucket.org/NordLabs/nordcms)
 
@@ -45,13 +45,14 @@ GETTING STARTED
     2. /protected/runtime - change permission to writable by webserver
     3. /uploads - change permission to writable by webserver
     4. /environment.php - add your absolute path to $local_path
-    5. /protected/config/dbconnect.local.php - adjust configuration
-    6. /protected/data/yiiopencms.sql - import database
+    5. /index.php - define Yii Framework path to $local_path
+    6. /protected/config/dbconnect.local.php - adjust configuration
+    7. /protected/data/yiiopencms.sql - import database
 
 You should be able to access:
 
 * Frontend using the URL `http://localhost/opencms/`
-* Backend using the URL `http://localhost/opencms/backend/`
+* Backend using the URL `http://localhost/opencms/backend/` `user:admin passwd: admin`
 
 **Author:** juankaka@gmail.com
 

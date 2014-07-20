@@ -30,7 +30,7 @@
             <?php //echo CHtml::Button(Yii::t('app', 'Login'),array('class'=>'btn btn-primary', 'submit'=>Yii::app()->controller->createUrl('site/login')));?>
             <?php  //echo CHtml::ajaxSubmitButton (''.Yii::t('app', 'Login').'', CController::createUrl('site/login'),array ('success' => 'function(data){if(data==="success"){location.reload(); }}',), array('class'=>'btn btn-primary'));?>
 	</div>
-   
+
 <?php $this->endWidget(); ?>
 </div><!-- form -->
 </div>
