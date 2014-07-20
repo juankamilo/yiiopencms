@@ -1591,7 +1591,7 @@ class CrugeAuthManager extends CAuthManager implements IAuthManager
         //		mapping: "action_ui_" cambiara por "action_cruge_ui_"
         //
         $itemname = $this->_mapAction($itemname, $this->mapping);
-        
+
         // ejemplo, recibe: action_site_index
         // lo descompone en array('site/index', ..$args..)
         $e = explode('_', $itemname);
@@ -1983,7 +1983,9 @@ class CrugeAuthManager extends CAuthManager implements IAuthManager
     {
         $this->_enumactions = array();
         $className = $controllerName . 'Controller';
-        Yii::import('application.controllers.' . $className, true);
+        Yii::import('application.controllers.frontend.' . $className);
+        Yii::import('application.controllers.backend.' . $className);
+        // Yii::import('application.controllers.' . $className, true);
         $refx = new ReflectionClass($className);
         foreach ($refx->getMethods() as $method) {
             if ($method->name != 'actions') {

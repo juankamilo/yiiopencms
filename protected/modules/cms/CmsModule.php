@@ -2,10 +2,11 @@
 /**
  * CmsModule class file.
  * @author Christoffer Niska <christoffer.niska@nordsoftware.com>
+ * @author juankamilo <juanrestrepo@dmwared.com>
  * @copyright Copyright &copy; 2011, Nord Software Ltd
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package nord.cms
- * @version 2.0.0
+ * @version 2.1.0
  */
 
 class CmsModule extends CWebModule
@@ -47,14 +48,12 @@ class CmsModule extends CWebModule
 	    ), $this->flashes);
 
 		$this->defaultController = 'admin';
-            /*
-             *  Se agrega opcion de traduccion segun sistema antiguo para el manejo, ya que el de nord no funciona
-             *
-             */
-            if (Yii::app()->user->hasState('lang'))
-                Yii::app()->language = Yii::app()->user->getState('lang');
-            else if(isset(Yii::app()->request->cookies['lang']))
-                Yii::app()->language = Yii::app()->request->cookies['lang']->value;
+
+    // Se agrega opcion de traduccion segun sistema antiguo para el manejo
+    if (Yii::app()->user->hasState('lang'))
+        Yii::app()->language = Yii::app()->user->getState('lang');
+    else if(isset(Yii::app()->request->cookies['lang']))
+        Yii::app()->language = Yii::app()->request->cookies['lang']->value;
 
 	}
 
@@ -86,7 +85,7 @@ class CmsModule extends CWebModule
 	 */
 	public function getVersion()
 	{
-		return '2.0.0';
+		return '2.1.0';
 	}
 
 

@@ -19,12 +19,12 @@ return CMap::mergeArray(
                         'connectionID'=>'db',
                     ),
                     // debug toolbar configuration
-                    array(
-                        'class' => 'XWebDebugRouter',
-                        'config' => 'alignLeft, opaque, runInDebug, fixedPos, collapsed, yamlStyle',
-                        'levels' => 'error, warning, trace, profile, info',
-                        'allowedIPs' => array('127.0.0.1', $_SERVER['REMOTE_ADDR']),
-                    ),
+                    // array(
+                    //     'class' => 'XWebDebugRouter',
+                    //     'config' => 'alignLeft, opaque, runInDebug, fixedPos, collapsed, yamlStyle',
+                    //     'levels' => 'error, warning, trace, profile, info',
+                    //     'allowedIPs' => array('127.0.0.1', $_SERVER['REMOTE_ADDR']),
+                    // ),
                 ),
             ),
             'cache' => array(

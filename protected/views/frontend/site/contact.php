@@ -5,11 +5,11 @@
 
 $this->pageTitle=Yii::app()->name . ' - Contact Us';
 $this->breadcrumbs=array(
-	'Contact',
+	Yii::t('app', 'Contact'),
 );
 ?>
 
-<h1>Contact Us</h1>
+<h1><?php echo Yii::t('app', 'Contact Us') ?></h1>
 
 <?php if(Yii::app()->user->hasFlash('contact')): ?>
 
@@ -20,7 +20,7 @@ $this->breadcrumbs=array(
 <?php else: ?>
 
 <p>
-If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+	<?php echo Yii::t('app', 'If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.') ?>
 </p>
 
 <div class="form">
@@ -34,7 +34,7 @@ If you have business inquiries or other questions, please fill out the following
 	),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note"><?php echo Yii::t('app', 'Fields with {ast} are required', array('{ast}'=>'<span class="required">*</span>')) ?>.  </p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -48,7 +48,7 @@ If you have business inquiries or other questions, please fill out the following
 
 	<?php if(CCaptcha::checkRequirements()): ?>
 		<?php echo $form->captchaRow($model,'verifyCode',array(
-            'hint'=>'Please enter the letters as they are shown in the image above.<br/>Letters are not case-sensitive.',
+            'hint'=>Yii::t('app', 'Please enter the letters as they are shown in the image above.<br/>Letters are not case-sensitive.'),
         )); ?>
 	<?php endif; ?>
 
@@ -56,7 +56,7 @@ If you have business inquiries or other questions, please fill out the following
 		<?php $this->widget('bootstrap.widgets.TbButton',array(
             'buttonType'=>'submit',
             'type'=>'primary',
-            'label'=>'Submit',
+            'label'=>Yii::t('app', 'Submit'),
         )); ?>
 	</div>
 

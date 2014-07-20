@@ -22,6 +22,8 @@ return array(
         'cruge'=>array(
 
                 'class' => 'application.modules.cruge.CrugeModule',
+                //'class' => 'application.components.backend.CrugeActions',
+
                 'tableprefix'=>'cruge_',
 
                 // para que utilice a protected.modules.cruge.models.auth.CrugeAuthDefault.php

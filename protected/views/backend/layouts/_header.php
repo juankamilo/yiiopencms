@@ -12,8 +12,6 @@ $this->widget('bootstrap.widgets.TbNavbar', array(
                     array('label'=>'Pages', 'icon'=>'file', 'url'=>array('/cms/page/index'),'visible'=>Yii::app()->user->checkAccess('cms')),
                     array('label'=>'Block', 'icon'=>'folder-open', 'url'=>array('/cms/block/index'),'visible'=>Yii::app()->user->checkAccess('cms')),
                     array('label'=>'Menu', 'icon'=>'book', 'url'=>array('/cms/menu/index'),'visible'=>Yii::app()->user->checkAccess('cms')),
-                    array('label'=>'PROMOS','visible'=>Yii::app()->user->checkAccess('manage')),
-                    array('label'=>'List', 'icon'=>'th-list', 'url'=>array('/promocion/admin'),'visible'=>Yii::app()->user->checkAccess('manage')),
                     array('label'=>'Messages','visible'=>Yii::app()->user->checkAccess('manage')),
                     array('label'=>'List', 'icon'=>'th-list', 'url'=>array('/cms/message/index'),'visible'=>Yii::app()->user->checkAccess('manage')),
 

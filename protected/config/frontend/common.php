@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'name' => 'YiiCMS - FrontEnd',
+    'name' => 'Yii OpenCMS',
     'theme' => 'frontend',
     'language'=>'en',
     // autoloading model and component classes

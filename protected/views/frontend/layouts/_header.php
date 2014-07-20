@@ -1,7 +1,6 @@
-
 <?php
+//Llamamos el widget para las traducciones
 $json = CJSON::decode($this->widget('application.components.frontend.widgets.LanguageSelector', array('type'=>'menu2'),true));
-
 
 $this->widget('bootstrap.widgets.TbNavbar',array(
     'items'=>array(
@@ -10,9 +9,9 @@ $this->widget('bootstrap.widgets.TbNavbar',array(
             'name'=>'navigation',
             'type'=>'',
             'items'=>array(
-                array('label'=>'Contact', 'url'=>array('/site/contact')),
+                array('label'=>Yii::t('app', 'Contact'), 'url'=>array('/site/contact')),
                 $json,
             ),
         ),
     ),
-)); ?>
+));

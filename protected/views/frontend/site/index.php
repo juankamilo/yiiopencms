@@ -1,21 +1,9 @@
 <?php
 /* @var $this SiteController */
-
-$this->pageTitle=Yii::app()->name;
 ?>
 
-<?php $this->beginWidget('bootstrap.widgets.TbHeroUnit',array(
-    'heading'=>'Welcome to '.CHtml::encode(Yii::app()->name),
-)); ?>
 
-<p>Congratulations! You have successfully created your Yii application.</p>
-
-<?php $this->endWidget(); ?>
-
-<h3>Cms Content</h3>
-<p>Cms Content</p>
-
-<p>You may change the content of this page by modifying the following two files:</p>
+<?php Yii::app()->cms->block('Index'); ?>
 
 <ul>
     <li>View file: <code><?php echo __FILE__; ?></code></li>

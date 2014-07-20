@@ -1,11 +1,11 @@
 <?php
 /**
  * MessageController class file.
- * @author Christoffer Niska <christoffer.niska@nordsoftware.com>
- * @copyright Copyright &copy; 2012, Nord Software Ltd
+ * @author juankamilo <juanrestrepo@dmwared.com>
+ * @copyright Copyright &copy; 2014,
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package cms.controllers
- * @since 2.0.0
+ * @since 2.1.0
  */
 
 /**

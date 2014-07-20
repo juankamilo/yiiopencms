@@ -1,11 +1,11 @@
 <?php
 /**
  * CmsMessage class file.
- * @author juan Restrepo <juanrestrepo@dmwared.com>
- * @copyright Copyright &copy; 2014, 
+ * @author juankamilo <juanrestrepo@dmwared.com>
+ * @copyright Copyright &copy; 2014,
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package cms.models
- * @since 2.0.1
+ * @since 2.1.0
  */
 
 /**
@@ -109,5 +109,5 @@ class CmsMessage extends CmsContent
             ));
         }
 
-    
+
 }
