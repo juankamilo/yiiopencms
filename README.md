@@ -57,3 +57,5 @@ You should be able to access:
 **Author:** juankaka@gmail.com
 
 **Version:** 0.1.0
+
+      Demo: http://www.mediatic.com.co/proyectos/yiiopencms/
