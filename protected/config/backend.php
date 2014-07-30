@@ -1,9 +1,14 @@
 <?php
 
 return CMap::mergeArray(
-    CMap::mergeArray(require(dirname(__FILE__) . '/common.php'), require(dirname(__FILE__) . '/../common/local.php')), array(
+    require(dirname(__FILE__) . '/common.php'), array(
+        'name' => 'YiiOpenCMS - Backend',
+        'theme' => 'backend',
+        'language'=>'en',
         'import' => array(
-            'ext.debugtoolbar.XWebDebugRouter',
+            'application.models.backend.*',
+            'application.components.backend.*',
+            //'ext.debugtoolbar.XWebDebugRouter',
         ),
         'components' => array(
             'log' => array(
@@ -24,6 +29,12 @@ return CMap::mergeArray(
             ),
             'cache' => array(
                 'class' => 'system.caching.CFileCache',
+            ),
+            'urlManager' => array(
+                'class' => 'UrlManager',
+                'urlFormat' => 'path',
+                'showScriptName' => false,
+                'rules' => require(dirname(__FILE__) . '/routes-back.php'),
             ),
         ),
         'params' => array(),
