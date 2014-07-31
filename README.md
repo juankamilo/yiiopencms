@@ -60,6 +60,19 @@ $yii=dirname(__FILE__).'/../framework/yii.php';
 require_once($yii);
 Yii::createWebApplication($config)->runEnd('frontend');
 ```
+Open /backend.php and modify it according to the following example:
+
+```
+<?php
+
+$environment = require_once(dirname(__FILE__).'/environment.php');
+$config = dirname(__FILE__) . "/protected/config/backend.php";
+
+// change the following paths
+$yii=dirname(__FILE__).'/../framework/yii.php';
+require_once($yii);
+Yii::createWebApplication($config)->runEnd('backend');
+```
 Import database:
 ```
 // Create db yiiopencms and import de following
@@ -90,6 +103,6 @@ paswd:admin
 ```
 **Author:** juankaka@gmail.com
 
-**Version:** 0.2
+**Version:** 0.2.1
 
 **Demo:** [http://www.mediatic.com.co/proyectos/yiiopencms/](http://www.mediatic.com.co/proyectos/yiiopencms/)
