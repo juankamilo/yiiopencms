@@ -13,6 +13,6 @@ return array(
     'backend/<controller:\w+>/<action:\w+>/*' => '<controller>/<action>',
     'backend/<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
     'backend/<controller:[\w\-]+>/<action:[\w\-]+>' => '<controller>/<action>',
-    
-    
+
+
 );

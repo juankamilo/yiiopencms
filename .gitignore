@@ -1,4 +1,6 @@
-/assets/
-/archivos/
-/nbproject/
-/protected/runtime/
+### Yii ###
+assets/*
+!assets/.gitignore
+protected/runtime/*
+!protected/runtime/.gitignore
+protected/data/*.db
