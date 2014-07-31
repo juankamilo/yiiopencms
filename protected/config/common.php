@@ -3,7 +3,7 @@
  * common configuration with different tier
  */
 return array(
-    'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '../..',
+    'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
     'import' => array(
         'application.components.*',
         'application.helpers.*',
@@ -146,6 +146,12 @@ return array(
                 'subjectprefix' => 'Tu Encabezado del asunto - ',
                 'debug' => true,
         ),
+        
+        'errorHandler' => array(
+            // use 'site/error' action to display errors
+            'errorAction' => 'site/error',
+        ),
+        'db' => require(dirname(__FILE__) . '/dbconnect.php'),
 
     ),
 
