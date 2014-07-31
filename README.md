@@ -1,8 +1,9 @@
-# Yii OpenCMS #
--------------------
+Yii OpenCMS
+===============================
+**Demo:** [http://www.mediatic.com.co/proyectos/yiiopencms/](http://www.mediatic.com.co/proyectos/yiiopencms/)
 
 FEATURES
--------------------
+------------
 * Backend and Frontend
 * Bootstrap 2.3
 * CMS Multilanguage Support I18n
@@ -12,7 +13,7 @@ FEATURES
 
 
 DIRECTORY STRUCTURE
--------------------
+------------
 **Reference:** [https://github.com/bryglen/yii-advanced-template](https://github.com/bryglen/yii-advanced-template)
 
 ```
@@ -40,22 +41,55 @@ DIRECTORY STRUCTURE
 
 GETTING STARTED
 ---------------
-
+Change Permission for:
     1. /assets - change permission to writable by webserver
     2. /protected/runtime - change permission to writable by webserver
     3. /uploads - change permission to writable by webserver
-    4. /environment.php - add your absolute path to $local_path
-    5. /index.php - define Yii Framework path to $local_path
-    6. /protected/config/dbconnect.local.php - adjust configuration
-    7. /protected/data/yiiopencms.sql - import database
+    4. /files - change permission to writable by webserver
 
-You should be able to access:
+Open /index.php and modify it according to the following example:
 
-* Frontend using the URL `http://localhost/opencms/`
-* Backend using the URL `http://localhost/opencms/backend/` `user:admin passwd: admin`
+```
+<?php
 
+$environment = require_once(dirname(__FILE__).'/environment.php');
+$config = dirname(__FILE__) . "/protected/config/frontend.php";
+
+// change the following paths
+$yii=dirname(__FILE__).'/../framework/yii.php';
+require_once($yii);
+Yii::createWebApplication($config)->runEnd('frontend');
+```
+Import database:
+```
+// Create db yiiopencms and import de following
+protected/data/yiiopencms.sql
+```
+Open protected/config/dbconnect.php and modify it according to the following example:
+```
+<?php
+
+return array(
+    'connectionString' => 'mysql:host=localhost;dbname=yiiopencms',
+    'emulatePrepare' => true,
+    'username' => 'admin',
+    'password' => 'admin',
+    'charset' => 'utf8',
+    'schemaCachingDuration' => 60*60,
+);
+```
+Enjoy
+---------------
+Open your browser:
+```
+// Go to:
+http://localhost/yiiopencms
+http://localhost/yiiopencms/backend
+user:admin
+paswd:admin
+```
 **Author:** juankaka@gmail.com
 
 **Version:** 0.2
 
-      Demo: http://www.mediatic.com.co/proyectos/yiiopencms/
+**Demo:** [http://www.mediatic.com.co/proyectos/yiiopencms/](http://www.mediatic.com.co/proyectos/yiiopencms/)
